@@ -436,7 +436,6 @@ button[type="submit"]:hover {
   } 
   
   .menu .link {
-   
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
@@ -538,12 +537,22 @@ button[type="submit"]:hover {
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     color: #000000; /* Cor do texto */
     background-color: #ffffff; /* Fundo branco */
+    cursor: pointer;
   }
   
   .submenu .submenu-link:hover {
-    color: #000000; /* Cor do texto ao hover */
-    background-color: #e0e0e0; /* Leve destaque ao hover */
+    color: #ffffff; /* Cor do texto ao hover */
+    background-color: rgb(12, 158, 146); /* Cor de fundo ao hover */
   }
+
+  button:disabled {  
+    cursor: not-allowed; /* Cursor de "não permitido" */
+    opacity: 1; /* Garantir que a opacidade não altere o visual */
+  }
+  
+  
+  
+  
   
 
 
