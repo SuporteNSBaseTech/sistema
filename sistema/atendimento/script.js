@@ -41,9 +41,11 @@ let timerPaused = false;
 let atendimentos = [];
 
 let conteudoAtestado = ""
-let conteudoAnaminese = ""
 let conteudoProntuario = ""
-let conteudoNeuro = ""
+let conteudoAnamineseI = ""
+let conteudoAnamineseA = ""
+let conteudoNeuroI = ""
+let conteudoNeuroA = ""
 
 // Função para atualizar o tempo do timer
 function updateTimer() {
@@ -91,9 +93,11 @@ stopButton.addEventListener('click', () => {
             id_agendamento: id_agendamento,
             id_paciente: id_paciente,
             conteudoAtestado,
-            conteudoAnaminese,
             conteudoProntuario,
-            conteudoNeuro,
+            conteudoAnamineseI,
+            conteudoAnamineseA,
+            conteudoNeuroI,
+            conteudoNeuroA,
             dataHora: dataHora,
             tempo: tempoAtendimento,
             paciente: paciente // Referência para o paciente
@@ -107,9 +111,12 @@ stopButton.addEventListener('click', () => {
                 id_agendamento: atendimento.id_agendamento,
                 id_paciente: atendimento.id_paciente,
                 conteudoAtestado: atendimento.conteudoAtestado,
-                conteudoAnaminese: atendimento.conteudoAnaminese,
                 conteudoProntuario: atendimento.conteudoProntuario,
-                conteudoNeuro: atendimento.conteudoNeuro,
+                conteudoAnamineseI: atendimento.conteudoAnamineseI,  
+                conteudoAnamineseA: atendimento.conteudoAnamineseA               
+                conteudoNeuroI: atendimento.conteudoNeuroI,
+                conteudoNeuroA: atendimento.conteudoNeuroA,
+                
                 tempo: atendimento.tempo + "",
                 dataHora: atendimento.dataHora
             }),
@@ -149,10 +156,13 @@ stopButton.addEventListener('click', () => {
 // Função para exibir os detalhes do atendimento
 function openAtendimentoDetails(atendimento) {
     // console.log(atendimento)
-    conteudoAnaminese = atendimento.conteudoAnaminese
-    conteudoAtestado = atendimento.conteudoAtestado
+   
     conteudoProntuario = atendimento.conteudoProntuario
-    conteudoNeuro = atendimento.conteudoNeuro
+    conteudoAtestado = atendimento.conteudoAtestado
+    conteudoAnamineseI = atendimento.conteudoAnamineseI
+    conteudoAnamineseA = atendimento.conteudoAnamineseA
+    conteudoNeuroI = atendimento.conteudoNeuroI
+    conteudoNeuroA = atendimento.conteudoNeuroA
     // nomePacienteInput.value = atendimento.paciente.nome; // Usamos o nome do paciente associado ao atendimento
     nomePacienteInput.value = nome_paciente; // Usamos o nome do paciente associado ao atendimento
 
