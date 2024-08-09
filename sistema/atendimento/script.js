@@ -147,7 +147,7 @@ stopButton.addEventListener('click', () => {
     // Limpa campos
     formTitle.textContent = '';
     nomePacienteInput.value = '';
-    formContent.value = '';
+    formContent.innerText = '';
     fileInput.value = '';
     timerSeconds = 0; // Zera o contador do timer
     updateTimer(); // Atualiza o timer
@@ -178,27 +178,27 @@ function openForm(title) {
     formTitle.textContent = title;
 
     if (title === "Atestado") {
-        formContent.value = conteudoAtestado;
+        formContent.innerText = conteudoAtestado;
     }
 
     if (title === "Prontuário") {
-        formContent.value = conteudoProntuario;
+        formContent.innerText = conteudoProntuario;
     }
 
     if (title === "Anamnese Infanto-Juvenil") {
-        formContent.value = conteudoAnamineseI;
+        formContent.innerText = conteudoAnamineseI;
     }
 
     if (title === "Anamnese Adulto") {
-        formContent.value = conteudoAnamineseA;
+        formContent.innerText = conteudoAnamineseA;
     }
 
     if (title === "Neuropsicológica Infanto-Juvenil") {
-        formContent.value = conteudoNeuroI;
+        formContent.innerText = conteudoNeuroI;
     }
 
     if (title === "Neuropsicológica Adulto") {
-        formContent.value = conteudoNeuroA;
+        formContent.innerText = conteudoNeuroA;
     }
 
 }
@@ -215,7 +215,7 @@ function openForm(title) {
 
 formContent.addEventListener("change", e => {
     const title = formTitle.textContent;
-    const content = e.target.value
+    const content =  e.target.innerText;
 
     
     if (title === "Atestado") {

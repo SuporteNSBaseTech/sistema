@@ -119,11 +119,13 @@ model cadastro_prof {
 model Atendimento {
   id                  String @id @default(uuid()) //este aqui é um comando do prisma pra gerar um id automatico
   id_agendamento      String
-  id_paciente        String
-  conteudoAtestado String
-  conteudoAnaminese String
-  conteudoProntuario String
-  conteudoNeuro String
+  id_paciente         String
+  conteudoAtestado    String
+  conteudoProntuario  String
+  conteudoAnamineseI  String
+  conteudoAnamineseA  String
+  conteudoNeuroI      String
+  conteudoNeuroA      String
   dataHora String
   tempo String
 }

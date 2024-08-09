@@ -128,15 +128,16 @@
                     <div class="menu">
                         <div class="item">
                             <a href="#" class="link">
-                                <li><button disabled>Anamnese</button></li>                               
+                                <li><button disabled>Anamnese</button></li>
                             </a>
                             <div class="submenu">
                                 <div class="arrow"></div> <!-- Flecha indicando o submenu -->
                                 <div class="submenu-item">
-                                    <a onclick="openForm('Anamnese')" class="submenu-link">Infanto-Juvenil</a>
+                                    <a onclick="openForm('Anamnese Infanto-Juvenil')"
+                                        class="submenu-link">Infanto-Juvenil</a>
                                 </div>
                                 <div class="submenu-item">
-                                    <a href="#" class="submenu-link">Adulto</a>
+                                    <a onclick="openForm('Anamnese Adulto')" class="submenu-link">Adulto</a>
                                 </div>
                             </div>
                         </div>
@@ -147,15 +148,16 @@
                     <div class="menu">
                         <div class="item">
                             <a href="#" class="link">
-                                <li><button disabled>Neuropsicológica</button></li>                               
+                                <li><button disabled>Neuropsicológica</button></li>
                             </a>
                             <div class="submenu">
                                 <div class="arrow"></div> <!-- Flecha indicando o submenu -->
                                 <div class="submenu-item">
-                                    <a onclick="openForm('Neuropsicológica')" class="submenu-link">Infanto-Juvenil</a>
+                                    <a onclick="openForm('Neuropsicológica Infanto-Juvenil')"
+                                        class="submenu-link">Infanto-Juvenil</a>
                                 </div>
                                 <div class="submenu-item">
-                                    <a href="#" class="submenu-link">Adulto</a>
+                                    <a onclick="openForm('Neuropsicológica Adulto')" class="submenu-link">Adulto</a>
                                 </div>
                             </div>
                         </div>
@@ -182,24 +184,27 @@
                     <button type="button" class="voltar-button" style="width: 30%;" onclick="generatePDF()">Gerar
                         PDF</button>
 
-                </div>
+                      
 
-                <div class="history">
-                    <h2 class="historicoh2">Histórico de Atendimentos</h2>
-                    <ul id="historyList">
-                        <!-- Lista de atendimentos vai ser exibida aqui -->
-            
-                    </ul>
-            
                 </div>
+                
+                    
+                
 
             </form>
         </div>
+        <div class="history">
+            <h2 >Histórico de Atendimentos</h2>
+            <ul id="historyList" style="width: 100%;">
+                <!-- Lista de atendimentos vai ser exibida aqui -->
+    
+            </ul>
+        </div>
     </div>
 
+ 
 
-   
-    
+
 
     <script src="../global/auth.js"></script>
     <script type="text/javascript" src="script.js"></script>
