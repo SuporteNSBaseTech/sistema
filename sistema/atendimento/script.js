@@ -113,7 +113,7 @@ stopButton.addEventListener('click', () => {
                 conteudoAtestado: atendimento.conteudoAtestado,
                 conteudoProntuario: atendimento.conteudoProntuario,
                 conteudoAnamineseI: atendimento.conteudoAnamineseI,  
-                conteudoAnamineseA: atendimento.conteudoAnamineseA               
+                conteudoAnamineseA: atendimento.conteudoAnamineseA,               
                 conteudoNeuroI: atendimento.conteudoNeuroI,
                 conteudoNeuroA: atendimento.conteudoNeuroA,
                 
@@ -177,10 +177,6 @@ function openAtendimentoDetails(atendimento) {
 function openForm(title) {
     formTitle.textContent = title;
 
-    if (title === "Anamnese") {
-        formContent.value = conteudoAnaminese;
-    }
-
     if (title === "Atestado") {
         formContent.value = conteudoAtestado;
     }
@@ -189,9 +185,22 @@ function openForm(title) {
         formContent.value = conteudoProntuario;
     }
 
-    if (title === "Neuropsicológica") {
-        formContent.value = conteudoNeuro;
+    if (title === "Anamnese Infanto-Juvenil") {
+        formContent.value = conteudoAnamineseI;
     }
+
+    if (title === "Anamnese Adulto") {
+        formContent.value = conteudoAnamineseA;
+    }
+
+    if (title === "Neuropsicológica Infanto-Juvenil") {
+        formContent.value = conteudoNeuroI;
+    }
+
+    if (title === "Neuropsicológica Adulto") {
+        formContent.value = conteudoNeuroA;
+    }
+
 }
 
 
@@ -208,10 +217,7 @@ formContent.addEventListener("change", e => {
     const title = formTitle.textContent;
     const content = e.target.value
 
-    if (title === "Anamnese") {
-        conteudoAnaminese = content;
-    }
-
+    
     if (title === "Atestado") {
         conteudoAtestado = content;
     }
@@ -220,8 +226,20 @@ formContent.addEventListener("change", e => {
         conteudoProntuario = content;
     }
 
-    if (title === "Neuropsicológica") {
-        conteudoNeuro = content;
+    if (title === "Anamnese Infanto-Juvenil") {
+        conteudoAnamineseI = content;
+    }
+
+    if (title === "Anamnese Adulto") {
+        conteudoAnamineseA = content;
+    }
+
+    if (title === "Neuropsicológica Infanto-Juvenil") {
+        conteudoNeuroI = content;
+    }
+
+    if (title === "Neuropsicológica Adulto") {
+        conteudoNeuroA = content;
     }
 })
 
@@ -332,12 +350,16 @@ let Usuario = ''
                 __________________________________
                 Assinatura da psicóloga responsável
             `;
-        } else if (formType === 'Anamnese') {
-            fixedText = `Texto fixo para Anamnese com ${nomePaciente}...`;
         } else if (formType === 'Prontuário') {
             fixedText = `Texto fixo para Prontuário com ${nomePaciente}...`;
-        } else if (formType === 'Neuropsicológica') {
-            fixedText = `Texto fixo para Avaliação Neuropsicológica com ${nomePaciente}...`;
+        } else if (formType === 'Anamnese Infanto-Juvenil') {
+            fixedText = `Texto fixo para Anamnese Infanto-Juvenil com ${nomePaciente}...`;
+        } else if (formType === 'Anamnese Adulto') {
+            fixedText = `Texto fixo para Anamnese Adulto com ${nomePaciente}...`;
+        } else if (formType === 'Neuropsicológica Infanto-Juvenil') {
+            fixedText = `Texto fixo para Avaliação Neuropsicológica Infanto-Juvenil com ${nomePaciente}...`;
+        } else if (formType === 'Neuropsicológica Adulto') {
+            fixedText = `Texto fixo para Avaliação Neuropsicológica Adulto com ${nomePaciente}...`;
         }
     
         // Define o conteúdo da div
@@ -386,19 +408,31 @@ let Usuario = ''
                             { text: nomePaciente, bold: true, decoration: 'underline', margin: [85, 0, 0, 20] },
                             { text: document.getElementById('formContent').innerText, margin: [85, 0, 0, 20] }
                         ];
-                    } else if (selectedFormType === 'Anamnese') {
-                        docDefinition.content = [
-                            { text: "Anamnese\n\n", alignment: 'center', fontSize: 16, bold: true, margin: [85, 50, 0, 20] },
-                            { text: `Conteúdo adicional para Anamnese: `, margin: [85, 0, 0, 20] },
-                            { text: document.getElementById('formContent').innerText, margin: [85, 0, 0, 20] }
-                        ];
-                    } else if (selectedFormType === 'Prontuário') {
+                    }  else if (selectedFormType === 'Prontuário') {
                         docDefinition.content = [
                             { text: "Prontuário\n\n", alignment: 'center', fontSize: 16, bold: true, margin: [85, 50, 0, 20] },
                             { text: `Conteúdo adicional para Prontuário: `, margin: [85, 0, 0, 20] },
                             { text: document.getElementById('formContent').innerText, margin: [85, 0, 0, 20] }
                         ];
-                    } else if (selectedFormType === 'Neuropsicológica') {
+                    } else if (selectedFormType === 'Anamnese Infanto-Juvenil') {
+                        docDefinition.content = [
+                            { text: "Anamnese\n\n", alignment: 'center', fontSize: 16, bold: true, margin: [85, 50, 0, 20] },
+                            { text: `Conteúdo adicional para Anamnese: `, margin: [85, 0, 0, 20] },
+                            { text: document.getElementById('formContent').innerText, margin: [85, 0, 0, 20] }
+                        ];
+                    } else if (selectedFormType === 'Anamnese Adulto') {
+                        docDefinition.content = [
+                            { text: "Anamnese\n\n", alignment: 'center', fontSize: 16, bold: true, margin: [85, 50, 0, 20] },
+                            { text: `Conteúdo adicional para Anamnese: `, margin: [85, 0, 0, 20] },
+                            { text: document.getElementById('formContent').innerText, margin: [85, 0, 0, 20] }
+                        ];
+                    }  else if (selectedFormType === 'Neuropsicológica Infanto-Juvenil') {
+                        docDefinition.content = [
+                            { text: "AVALIAÇÃO PSICOLÓGICA COM ENFOQUE NEUROPSICOLÓGICO\n\n", alignment: 'center', fontSize: 16, bold: true, margin: [85, 50, 0, 20] },
+                            { text: `Conteúdo adicional para Avaliação Neuropsicológica: `, margin: [85, 0, 0, 20] },
+                            { text: document.getElementById('formContent').innerText, margin: [85, 0, 0, 20] }
+                        ];
+                    } else if (selectedFormType === 'Neuropsicológica Adulto') {
                         docDefinition.content = [
                             { text: "AVALIAÇÃO PSICOLÓGICA COM ENFOQUE NEUROPSICOLÓGICO\n\n", alignment: 'center', fontSize: 16, bold: true, margin: [85, 50, 0, 20] },
                             { text: `Conteúdo adicional para Avaliação Neuropsicológica: `, margin: [85, 0, 0, 20] },
