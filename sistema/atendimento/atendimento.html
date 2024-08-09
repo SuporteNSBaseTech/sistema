@@ -122,72 +122,83 @@
                 <h2>Opções</h2>
                 <ul>
                     <li><button onclick="openForm('Atestado')">Atestado</button></li>
-                    <li><button onclick="openForm('Anamnese')">Anamnese</button></li>
+
                     <li><button onclick="openForm('Prontuário')">Prontuário</button></li>
-                    <!-- <li><button onclick="openForm('Neuropsicológica')">Neuropsicológica</button></li> -->
+
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link">
+                                <li><button onclick="openForm('Anamnese')">Anamnese</button></li>
+                                
+                             
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link">Infanto-Juvenil</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link">Adulto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <div class="menu">
                         <div class="item">
                             <a href="#" class="link">
                                 <li><button onclick="openForm('Neuropsicológica')">Neuropsicológica</button></li>
-                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve"> -->
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path id="XMLID_225_"
-                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z">
-                                        </path>
-                                    </g>
-                                </svg>
+                               
                             </a>
                             <div class="submenu">
+                                <div class="arrow"></div> <!-- Flecha indicando o submenu -->
                                 <div class="submenu-item">
-                                    <a href="#" class="submenu-link"> Development </a>
+                                    <a href="#" class="submenu-link">Infanto-Juvenil</a>
                                 </div>
                                 <div class="submenu-item">
-                                    <a href="#" class="submenu-link"> Design </a>
-                                </div>
-                                <div class="submenu-item">
-                                    <a href="#" class="submenu-link"> Marketing </a>
-                                </div>
-                                <div class="submenu-item">
-                                    <a href="#" class="submenu-link"> SEO </a>
+                                    <a href="#" class="submenu-link">Adulto</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </ul>
             </div>
-
-
-
-
-            <div class="form-container">
-                <form id="form">
-                    <h2 id="formTitle"></h2>
-                    <input style="border-radius: 20px;" type="text" id="nomePaciente" placeholder="Nome do Paciente">
-                    <div class="form-fields">
-                        <div id="formContent" contenteditable="true"
-                            style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto;"></div>
-
-                        <input type="text" id="nomePaciente" placeholder="Nome do arquivo" value=".pdf" disabled
-                            style="display:none;">
-                        <button type="button" class="voltar-button" style="width: 30%;" onclick="generatePDF()">Gerar
-                            PDF</button>
-
-                    </div>
-
-                </form>
-            </div>
         </div>
 
 
-        <div class="history">
-            <h2>Histórico de Atendimentos</h2>
-            <ul id="historyList">
-                <!-- Lista de atendimentos vai ser exibida aqui -->
 
-            </ul>
 
+
+        <div class="form-container">
+            <form id="form">
+                <h2 id="formTitle"></h2>
+                <input style="border-radius: 20px;" type="text" id="nomePaciente" placeholder="Nome do Paciente">
+                <div class="form-fields">
+                    <div id="formContent" contenteditable="true"
+                        style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto;"></div>
+
+                    <input type="text" id="nomePaciente" placeholder="Nome do arquivo" value=".pdf" disabled
+                        style="display:none;">
+                    <button type="button" class="voltar-button" style="width: 30%;" onclick="generatePDF()">Gerar
+                        PDF</button>
+
+                </div>
+
+            </form>
         </div>
+    </div>
+
+
+    <div class="history">
+        <h2>Histórico de Atendimentos</h2>
+        <ul id="historyList">
+            <!-- Lista de atendimentos vai ser exibida aqui -->
+
+        </ul>
+
+    </div>
     </div>
 
     <script src="../global/auth.js"></script>
